@@ -10,4 +10,10 @@ class UserRepository{
    public function existsByEmail(string $email): bool{
     return User::where('email', $email)->exists();
    }
+   public function update(int $id, array $data) :User{
+  $user = User::findOrFail($id);
+$user->update($data);
+
+return $user; 
+   }
 }
