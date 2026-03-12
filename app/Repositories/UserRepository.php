@@ -24,6 +24,10 @@ class UserRepository
     }
     public function delete(int $id){
         return User::destroy($id);
-        return $delete;
+    }
+    public function getById(int $id): User {
+        return User::findOrFail($id);    }
+    public function getalluser() {
+        return User::all();
     }
 }

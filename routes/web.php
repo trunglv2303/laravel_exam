@@ -6,4 +6,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::post('/users', [UserController::class, 'store']);
-
+Route::get('/users/{id}', [UserController::class, 'getuserbyid']);
+Route::get ('/usersall', [UserController::class, 'getalluser']);

@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace App\DTOs;
 class CreateUserDTO{
 public function __construct(

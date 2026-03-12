@@ -9,17 +9,24 @@ use App\Models\User;
 
 class CreateHandle
 {
+//    public function __construct(
+//        private UserRepository $userrepos
+//    )
+//    {
+//    }
+    private $userRepository;
+
     public function __construct(
-        private UserRepository $userrepos
-
-
+        UserRepository $userRepository
     )
     {
+        $this->userRepository = $userRepository;
+
     }
 
     public function createUser(CreateUserDTO $dto): User
     {
-        return $this->userrepos->create([
+        return $this->userRepository->create([
             'name' => $dto->name,
             'email' => $dto->email,
             'password' => $dto->password,
